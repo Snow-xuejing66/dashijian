@@ -40,6 +40,7 @@ $(function () {
     })
     // 监听登录表单提交事件
     $("#login-box-layui-form").submit(function (e) {
+<<<<<<< HEAD
         // 阻止默认提交行为
         e.preventDefault()
         $.ajax({
@@ -57,6 +58,18 @@ $(function () {
                 localStorage.setItem('token', res.token)
                 // 跳转到后台主页
                 location.href = '/index.html'
+=======
+        // 阻止提交事件
+        e.preventDefault()
+        $.ajax({
+            method: "POST",
+            url: "http://ajax.frontend.itheima.net/api/login",
+            data: $(this).serialize(),
+            success: function (res) {
+                if (res.status == 0) {
+                    return layer.msg(res.message);
+                } layer.msg("登录失败")
+>>>>>>> login
             }
         })
     })

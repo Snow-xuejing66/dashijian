@@ -4,17 +4,44 @@ head,body{
 }
 body{
     background: url("../images/login_bg.jpg");
+    background-position: 0 0;
 }
 .loginAndRegBox{
+    position: relative;
     width: 400px;
-    height: 310px;
     background-color: #fff;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
+/* 登录注册区域头部 */
 .loginAndRegBox .title-box{
     height: 40px;
     background: url("../images/login_title.png") no-repeat center;
+}
+.layui-form{
+    margin: 50px 20px 50px;
+}
+.layui-input{
+    margin-bottom: 20px;
+}
+.reg-box{
+    display: none;
+}
+.link_reg,.link_login{
+    position: absolute;
+    right: 20px;
+bottom: 10px;
+}
+.layui-form-item{
+    position: relative;
+    line-height: 40px;
+    text-indent: 10px;
+}
+.layui-form-item .layui-icon{
+    position: absolute;
+}
+.layui-form-item input{
+    padding-left: 50px;
 }
