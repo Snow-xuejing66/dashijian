@@ -48,7 +48,9 @@ $(function () {
             data: $(this).serialize(),
             success: function (res) {
                 if (res.status == 0) {
-                    return layer.msg(res.message);
+                    layer.msg(res.message);
+                    location.href = "/index.html"
+                    return
                 } layer.msg("登录失败")
             }
         })
