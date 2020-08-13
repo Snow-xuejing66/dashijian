@@ -48,6 +48,7 @@ $(function () {
             // 快速获取表单中的数据
             data: $(this).serialize(),
             success: function (res) {
+<<<<<<< HEAD
                 console.log(res);
                 if (res.status !== 0) {
                     return layer.msg('登录失败！')
@@ -57,6 +58,14 @@ $(function () {
                 localStorage.setItem('token', res.token)
                 // 跳转到后台主页
                 location.href = 'http://ajax.frontend.itheima.net/index.html'
+=======
+                if (res.status !== 0) {
+                    return layer.msg("登录失败")
+                }
+                layer.msg("登录成功")
+                localStorage.setItem("token", res.taken)
+                location.href = "./index.html"
+>>>>>>> login
             }
         })
     })
