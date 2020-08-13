@@ -47,11 +47,12 @@ $(function () {
             url: "http://ajax.frontend.itheima.net/api/login",
             data: $(this).serialize(),
             success: function (res) {
-                if (res.status == 0) {
-                    layer.msg(res.message);
-                    location.href = "/index.html"
-                    return
-                } layer.msg("登录失败")
+                if (res.status !== 0) {
+                    return layer.msg("登录失败")
+                }
+                layer.msg("登录成功")
+                localStorage.setItem("token", res.taken)
+                location.href = "./index.html"
             }
         })
     })
